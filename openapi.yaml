@@ -1,0 +1,77 @@
+openapi: 3.0.0
+
+info:
+  title: Star Wars API
+  version: 1.0.0
+
+servers:
+  - url: /
+
+x-google-api-management:
+  backends:
+    - name: starwars-backend
+      address: https://backend-python-fastapi-powerofdata-532303642805.us-central1.run.app
+
+paths:
+  /health:
+    get:
+      operationId: healthCheck
+      x-google-backend:
+        backend: starwars-backend
+      responses:
+        "200":
+          description: OK
+
+  /films:
+    get:
+      operationId: getFilms
+      x-google-backend:
+        backend: starwars-backend
+      responses:
+        "200":
+          description: OK
+
+  /people:
+    get:
+      operationId: getPeople
+      x-google-backend:
+        backend: starwars-backend
+      responses:
+        "200":
+          description: OK
+
+  /planets:
+    get:
+      operationId: getPlanets
+      x-google-backend:
+        backend: starwars-backend
+      responses:
+        "200":
+          description: OK
+
+  /species:
+    get:
+      operationId: getSpecies
+      x-google-backend:
+        backend: starwars-backend
+      responses:
+        "200":
+          description: OK
+
+  /starships:
+    get:
+      operationId: getStarships
+      x-google-backend:
+        backend: starwars-backend
+      responses:
+        "200":
+          description: OK
+
+  /vehicles:
+    get:
+      operationId: getVehicles
+      x-google-backend:
+        backend: starwars-backend
+      responses:
+        "200":
+          description: OK
