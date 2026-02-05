@@ -1,6 +1,6 @@
-# Python-FastApi-SWAPI
+# API em Python FastAPI que consome a SWAPI (Star Wars API) com arquitetura DDD.
 
-API em Python FastAPI que consome a SWAPI (Star Wars API) com arquitetura DDD.
+# <a href="https://github.com/LuisFernandoBelato/Backend-Python-FastApi-PowerOfData/blob/main/Documenta%C3%A7%C3%A3o%20T%C3%A9cnica%20de%20Software.pdf" title="Link para PDF da Documentação Técnica" target="_blank" rel="doc">Documentação Técnica</a>
 
 ## Comandos para rodar aplicação
 
@@ -68,17 +68,3 @@ Para ver o relatório de cobertura:
 ```bash
 pytest --cov=app --cov-report=html
 ```
-
-Depois abra `htmlcov/index.html` no navegador.
-
-### Endpoints Testados
-
-- ✅ `/films/` - Filmes
-- ✅ `/people/` - Personagens
-- ✅ `/planets/` - Planetas
-- ✅ `/species/` - Espécies
-- ✅ `/starships/` - Naves
-- ✅ `/vehicles/` - Veículos
-- ✅ `/health` - Healthcheck
-
-Veja mais detalhes em [tests/README.md](tests/README.md)
