@@ -95,7 +95,7 @@ class PeopleService(BaseSwapiService):
         entities: list[PeopleEntity],
         order: Optional[str],
     ) -> list[PeopleEntity]:
-        if not order:
+        if not order or not isinstance(order, str):
             return entities
 
         normalized = order.strip().lower()

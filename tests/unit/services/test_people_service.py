@@ -257,13 +257,13 @@ class TestPeopleService:
 
     def test_order_entities_ascending(self, sample_person_payload):
         """Test ordering entities in ascending order."""
-        from app.domain.entities.people.people_entity import PersonEntity
+        from app.domain.entities.people.people_entity import PeopleEntity
 
         service = PeopleService()
         entities = [
-            PersonEntity(name="C Person", **{k: v for k, v in sample_person_payload.items() if k != 'name'}),
-            PersonEntity(name="A Person", **{k: v for k, v in sample_person_payload.items() if k != 'name'}),
-            PersonEntity(name="B Person", **{k: v for k, v in sample_person_payload.items() if k != 'name'}),
+            PeopleEntity(name="C Person", **{k: v for k, v in sample_person_payload.items() if k != 'name'}),
+            PeopleEntity(name="A Person", **{k: v for k, v in sample_person_payload.items() if k != 'name'}),
+            PeopleEntity(name="B Person", **{k: v for k, v in sample_person_payload.items() if k != 'name'}),
         ]
 
         ordered = service._order_entities(entities, "asc")
@@ -274,13 +274,13 @@ class TestPeopleService:
 
     def test_order_entities_descending(self, sample_person_payload):
         """Test ordering entities in descending order."""
-        from app.domain.entities.people.people_entity import PersonEntity
+        from app.domain.entities.people.people_entity import PeopleEntity
 
         service = PeopleService()
         entities = [
-            PersonEntity(name="A Person", **{k: v for k, v in sample_person_payload.items() if k != 'name'}),
-            PersonEntity(name="C Person", **{k: v for k, v in sample_person_payload.items() if k != 'name'}),
-            PersonEntity(name="B Person", **{k: v for k, v in sample_person_payload.items() if k != 'name'}),
+            PeopleEntity(name="A Person", **{k: v for k, v in sample_person_payload.items() if k != 'name'}),
+            PeopleEntity(name="C Person", **{k: v for k, v in sample_person_payload.items() if k != 'name'}),
+            PeopleEntity(name="B Person", **{k: v for k, v in sample_person_payload.items() if k != 'name'}),
         ]
 
         ordered = service._order_entities(entities, "desc")

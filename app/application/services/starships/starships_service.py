@@ -97,7 +97,7 @@ class StarshipsService(BaseSwapiService):
         entities: list[StarshipEntity],
         order: Optional[str],
     ) -> list[StarshipEntity]:
-        if not order:
+        if not order or not isinstance(order, str):
             return entities
 
         normalized = order.strip().lower()

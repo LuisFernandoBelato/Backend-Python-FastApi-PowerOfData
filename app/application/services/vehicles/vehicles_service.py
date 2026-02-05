@@ -95,7 +95,7 @@ class VehiclesService(BaseSwapiService):
         entities: list[VehicleEntity],
         order: Optional[str],
     ) -> list[VehicleEntity]:
-        if not order:
+        if not order or not isinstance(order, str):
             return entities
 
         normalized = order.strip().lower()

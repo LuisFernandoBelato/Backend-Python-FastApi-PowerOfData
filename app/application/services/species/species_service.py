@@ -92,7 +92,7 @@ class SpeciesService(BaseSwapiService):
         entities: list[SpeciesEntity],
         order: Optional[str],
     ) -> list[SpeciesEntity]:
-        if not order:
+        if not order or not isinstance(order, str):
             return entities
 
         normalized = order.strip().lower()
